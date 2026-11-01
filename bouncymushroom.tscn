@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dv0lhci1hma6d"]
+
+[ext_resource type="Script" uid="uid://bbt8j8fhncsud" path="res://scripts/bouncymushroom.gd" id="1_koboq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w8f7h"]
+radius = 5.0
+height = 15.88
+
+[node name="bouncymushroom" type="Area2D" unique_id=1744807445]
+script = ExtResource("1_koboq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=159784547]
+shape = SubResource("CapsuleShape2D_w8f7h")

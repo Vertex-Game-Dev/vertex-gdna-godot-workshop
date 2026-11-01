@@ -43,6 +43,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gssbl"]
 size = Vector2(10, 13)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gr5yi"]
+size = Vector2(12, 4)
+
 [node name="Slime" type="Node2D" unique_id=1398719995]
 script = ExtResource("1_gr5yi")
 
@@ -67,3 +70,11 @@ target_position = Vector2(8, 0)
 [node name="RayCastLeft" type="RayCast2D" parent="." unique_id=254338140]
 position = Vector2(0, -6)
 target_position = Vector2(-8, 0)
+
+[node name="StompArea" type="Area2D" parent="." unique_id=391350732]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StompArea" unique_id=674038980]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_gr5yi")

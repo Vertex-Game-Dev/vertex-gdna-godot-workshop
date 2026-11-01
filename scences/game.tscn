@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://c3pian2665343" path="res://assets/fonts/PixelOperator8.ttf" id="6_cho2i"]
 [ext_resource type="PackedScene" uid="uid://dy7culnyxlc1l" path="res://scences/slime.tscn" id="6_yru2q"]
 [ext_resource type="FontFile" uid="uid://bahomntydmfss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="8_lvua1"]
+[ext_resource type="PackedScene" uid="uid://blpykku48odpj" path="res://scences/bouncing_mushroom.tscn" id="10_a0bl5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yru2q"]
 texture = ExtResource("2_jx3ei")
@@ -493,3 +494,12 @@ horizontal_alignment = 1
 
 [node name="Slime" parent="." unique_id=252674254 instance=ExtResource("6_yru2q")]
 position = Vector2(805, 16)
+
+[node name="BouncingMushroom" parent="." unique_id=600596726 instance=ExtResource("10_a0bl5")]
+position = Vector2(232, 24)
+
+[node name="BouncingMushroom2" parent="." unique_id=163223565 instance=ExtResource("10_a0bl5")]
+position = Vector2(761, -24)
+
+[node name="BouncingMushroom3" parent="." unique_id=15336272 instance=ExtResource("10_a0bl5")]
+position = Vector2(360, -87)

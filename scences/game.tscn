@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://fdnoluuuj6nw" path="res://scences/killzone.tscn" id="5_b174u"]
 [ext_resource type="FontFile" uid="uid://c3pian2665343" path="res://assets/fonts/PixelOperator8.ttf" id="6_cho2i"]
 [ext_resource type="PackedScene" uid="uid://dy7culnyxlc1l" path="res://scences/slime.tscn" id="6_yru2q"]
+[ext_resource type="PackedScene" uid="uid://b3f4l0k75k30g" path="res://scences/mushroom.tscn" id="8_a0bl5"]
 [ext_resource type="FontFile" uid="uid://bahomntydmfss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="8_lvua1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yru2q"]
@@ -447,6 +448,12 @@ position = Vector2(983, -137)
 
 [node name="Coin13" parent="Coins" unique_id=1805370312 instance=ExtResource("4_cfxbr")]
 position = Vector2(896, -169)
+
+[node name="mushroom" parent="Coins" unique_id=286192581 instance=ExtResource("8_a0bl5")]
+position = Vector2(121, 25)
+
+[node name="mushroom2" parent="Coins" unique_id=1933365423 instance=ExtResource("8_a0bl5")]
+position = Vector2(242, -69)
 
 [node name="Labels" type="Node" parent="." unique_id=387310911]
 

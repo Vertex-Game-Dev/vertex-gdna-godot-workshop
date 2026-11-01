@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://c3pian2665343" path="res://assets/fonts/PixelOperator8.ttf" id="6_cho2i"]
 [ext_resource type="PackedScene" uid="uid://dy7culnyxlc1l" path="res://scences/slime.tscn" id="6_yru2q"]
 [ext_resource type="FontFile" uid="uid://bahomntydmfss" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="8_lvua1"]
+[ext_resource type="PackedScene" uid="uid://basndu33n4dte" path="res://scences/bounce_pad.tscn" id="10_nn1ya"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yru2q"]
 texture = ExtResource("2_jx3ei")
@@ -493,3 +494,9 @@ horizontal_alignment = 1
 
 [node name="Slime" parent="." unique_id=252674254 instance=ExtResource("6_yru2q")]
 position = Vector2(805, 16)
+
+[node name="BP1" parent="." unique_id=2111249735 instance=ExtResource("10_nn1ya")]
+position = Vector2(136, 25)
+
+[node name="BP2" parent="." unique_id=1774878508 instance=ExtResource("10_nn1ya")]
+position = Vector2(456, -55)

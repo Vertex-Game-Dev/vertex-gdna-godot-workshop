@@ -1,29 +1,40 @@
 extends CharacterBody2D
 
-
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
+const MAX_JUMPS = 2
+
+var jump_count := 0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	# Add gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		# Walking off a ledge spends the ground jump
+		if jump_count == 0:
+			jump_count = 1
+	else:
+		# Reset jumps when grounded
+		jump_count = 0
 
-	# Get the direction: -1, 0, 1
+	# Handle double jump
+	if Input.is_action_just_pressed("jump") and jump_count < MAX_JUMPS:
+		velocity.y = JUMP_VELOCITY
+		jump_count += 1
+
+	# Get direction: -1, 0, 1
 	var direction := Input.get_axis("move_left", "move_right")
-	
-	# Flip the the player
+
+	# Flip player sprite
 	if direction > 0:
 		animated_sprite.flip_h = false
 	elif direction < 0:
 		animated_sprite.flip_h = true
-	
+
 	# Animations
 	if is_on_floor():
 		if direction == 0:
@@ -32,9 +43,18 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.play("run")
 	else:
 		animated_sprite.play("jump")
+
+	# Horizontal movement
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+# BouncePad integration
+func apply_bounce(strength: float) -> void:
+	velocity.y = strength
+	jump_count = 1
+	print("Player bounced!")

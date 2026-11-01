@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://basndu33n4dte"]
+
+[ext_resource type="Script" uid="uid://da85olb0ckbbj" path="res://scripts/bp.gd" id="1_i141i"]
+[ext_resource type="Texture2D" uid="uid://dq38agfp7dr0r" path="res://assets/sprites/world_tileset.png" id="2_bixfk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bixfk"]
+size = Vector2(16, 15)
+
+[node name="BouncePad" type="Area2D" unique_id=2111249735]
+collision_mask = 2
+script = ExtResource("1_i141i")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=812419821]
+texture = ExtResource("2_bixfk")
+region_enabled = true
+region_rect = Rect2(111.52859, 112.5028, 17.056297, 15.756767)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1279144505]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_bixfk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

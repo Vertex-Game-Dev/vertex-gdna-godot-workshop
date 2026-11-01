@@ -35,13 +35,16 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5gtdx")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gssbl"]
 size = Vector2(10, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ym1yf"]
+size = Vector2(10, 15)
 
 [node name="Slime" type="Node2D" unique_id=1398719995]
 script = ExtResource("1_gr5yi")
@@ -67,3 +70,12 @@ target_position = Vector2(8, 0)
 [node name="RayCastLeft" type="RayCast2D" parent="." unique_id=254338140]
 position = Vector2(0, -6)
 target_position = Vector2(-8, 0)
+
+[node name="weakspot" type="Area2D" parent="." unique_id=1936030209]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="weakspot" unique_id=1505351400]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_ym1yf")
+
+[connection signal="body_entered" from="weakspot" to="." method="_on_weakspot_body_entered"]

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c1b3dd1paclc2"]
+
+[ext_resource type="Script" uid="uid://i15hq35v4e0k" path="res://scripts/bouncy_mushroom.gd" id="1_a5epg"]
+[ext_resource type="Texture2D" uid="uid://dq38agfp7dr0r" path="res://assets/sprites/world_tileset.png" id="2_yhbsm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvl3q"]
+size = Vector2(16, 11)
+
+[node name="BouncyMushroom" type="Area2D" unique_id=1102190348]
+collision_mask = 2
+script = ExtResource("1_a5epg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1181759113]
+texture = ExtResource("2_yhbsm")
+region_enabled = true
+region_rect = Rect2(112.14585, 96, 15.854149, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1643324392]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_xvl3q")
